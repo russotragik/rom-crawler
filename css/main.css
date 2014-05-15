@@ -1,0 +1,11 @@
+.navbar-collapse form.navbar-form.navbar-left { margin-top: -1px; }
+.navbar-collapse form.navbar-form.navbar-left input { height: 40px; }
+.jumbotron { margin-top: -10px; background: url('http://fc07.deviantart.net/fs70/i/2011/211/a/4/super_metroid_hd_by_modusprodukt-d427im7.jpg') center center no-repeat; background-size: cover; }
+.jumbotron div > * { text-shadow: 0px 1px 0px #000; }
+.navbar-nav li a.not-anim:hover { background: none; }
+.home .row.presentation .col-lg-4 { text-align: center; }
+.home .row.presentation .col-lg-4 span.glyphicon { font-size: 100px; }
+.home .row.main-search { margin: 20px 0px 50px 0px; }
+.home .row.main-search input { font-size: 25px; border-radius: 3px 0 0 3px; border: none; padding: 6px; }
+.home .row.main-search button { font-size: 19px; border-radius: 0 3px 3px 0; margin-top: -13px; border-radius: 0 3px 3px 0; margin-left: -3px; padding: 11px 24px; }
+.rom-list { display: none; }
