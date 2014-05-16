@@ -8,6 +8,30 @@ var romCrawler = {
         }
     },
     controller: {
+        liveEvents: function() {
+            $('body').on('click', 'td#rom-element a', function(e) {
+                waitScreen.show();
+                e.preventDefault();
+                crawler.public.downloadGame[$(this).attr('data-from')]($(this).attr('data-gameId'));
+            });
+        },
+        populateRomList: function(gameArray) {
+            for(object in gameArray){
+                $('#romContent').append(
+                        '<tr>'+
+                            '<td>'+
+                                gameArray[object].platform+
+                            '</td>'+
+                            '<td id="rom-element">'+
+                                '<a href="#" data-gameId="'+gameArray[object].gameId+'" data-from="'+gameArray[object].from+'">'+gameArray[object].gameName+'</a>'+
+                            '</td>'+
+                            '<td>'+
+                                gameArray[object].from+
+                            '</td>'+
+                        '</tr>');
+            }
+            romCrawler.controller.labels.manageRomListSearch(romCrawler.public.searchQuery);
+        },
         containers: {
             homeFormat: function(){
                 $('form.navbar-form.navbar-left').hide();
@@ -54,6 +78,7 @@ var romCrawler = {
 };
 $(document).ready(function() {
     romCrawler.controller.containers.homeFormat();
+    romCrawler.controller.liveEvents();
     if (retrieveGet("s", document.location.search).length > 0) {
         romCrawler.public.searchQuery = retrieveGet("s", document.location.search);
         romCrawler.controller.containers.romlistFormat();

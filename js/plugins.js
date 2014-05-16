@@ -19,6 +19,20 @@
         }
     }
 }());
+function stringTemplate(template, string) {
+    for (key in template) {
+        string = string.replace(key, template[key]);
+    }
+    return string;
+}
+var waitScreen = {
+    show: function() {
+        $('#waitForIt').fadeIn();
+    },
+    hide: function() {
+        $('#waitForIt').fadeOut();
+    }
+}
 /**
  * Retrieves a specific GET parameter from specified URL.
  * 
